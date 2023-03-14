@@ -16,14 +16,14 @@ public class GreetingController {
     public String hello(){
         return "hello world";
     }
-    @GetMapping("/addComp")
+    @GetMapping("/addcomputer")
     public String add(){
         Random rd = new Random();
         Computer comp = new Computer("Acer "+rd.nextInt(20));
         computerRepository.save(comp);
         return "added";
     }
-    @GetMapping("/list")
+    @GetMapping("/listcomputers")
     public Iterable<Computer> list(){
         return computerRepository.findAll();
     }
